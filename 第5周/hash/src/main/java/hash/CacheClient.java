@@ -15,7 +15,7 @@ public class CacheClient {
     }
 
     public void put(String key, String value) {
-        int hashCode = Hash.FNVHash1(key);
+        int hashCode = Hash.FNVHash(key);
         int idx = Math.abs(hashCode % clusters);
         list.get(idx).put(key,value);
     }

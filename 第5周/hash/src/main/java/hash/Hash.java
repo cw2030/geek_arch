@@ -1,8 +1,9 @@
 package hash;
 
 public class Hash {
-    public static int FNVHash1(String data) {
-        final int p = 16777619;
+    final static int p = 16777619;
+
+    public static int FNVHash(String data) {
         int hash = (int) 2166136261L;
         for (int i = 0; i < data.length(); i++)
             hash = (hash ^ data.charAt(i)) * p;
